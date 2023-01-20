@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../Stylesheets/webviewStyle.css" />
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <h1 id="testing"></h1>
+    <div id="map"></div>
+
+    <div id="infoContainer">
+        <div id="detailed">
+            <h2 id="detailedTitle" class="header">Hover a vector to show a detailed description...</h2>
+            <div id="content"></div>
+        </div>
+        <div id="disclaimer">
+            <h2 class="header">Map and geo-location info</h2>
+            <p>If CyberScope was unable to resolve geo-location of an IP address, then it will not show up on the map.</p>
+            <p>The country of an IP address can be determined with approximately 95-99% accuracy.</p>
+            <p>The exact city in which an IP address is located can have varying levels of accuracy, from 50-75% accuracy, so take these measurements and precise coordinates as an estimate.</p>
+        </div>
+    </div>
+
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRLhOMzyPWIiOePjcpgdws3KYt5rlwAeE&libraries=&v=weekly"
+            async defer></script>
+</body>
+</html>
