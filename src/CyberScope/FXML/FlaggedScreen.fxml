@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<VBox fx:id="flaggedScreen" prefHeight="743.0" prefWidth="900.0" styleClass="base" stylesheets="@../Stylesheets/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CyberScope.FlaggedScreenController">
+   <children>
+      <Label text="Flagged traffic">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="10.0" top="10.0" />
+         </VBox.margin></Label>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="47.0" prefHeight="350.0" prefWidth="200.0" spacing="5.0">
+         <children>
+            <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Internal traffic">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="internalTrafficTable" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="internalTrafficSource" prefWidth="140.0" text="Source" />
+                        <TableColumn fx:id="internalTrafficDestination" prefWidth="140.0" text="Destination" />
+                        <TableColumn fx:id="internalTrafficProtocol" text="Protocol" />
+                        <TableColumn fx:id="internalTrafficSize" prefWidth="35.0" text="Size" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Incoming traffic">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="incomingTrafficTable" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="incomingTrafficSource" prefWidth="140.0" text="Source" />
+                        <TableColumn fx:id="incomingTrafficDestination" prefWidth="140.0" text="Destination" />
+                        <TableColumn fx:id="incomingTrafficProtocol" text="Protocol" />
+                        <TableColumn fx:id="incomingTrafficSize" prefWidth="35.0" text="Size" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" layoutX="594.0" layoutY="10.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Outgoing traffic">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="outgoingTrafficTable" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="outgoingTrafficSource" prefWidth="140.0" text="Source" />
+                        <TableColumn fx:id="outgoingTrafficDestination" prefWidth="140.0" text="Destination" />
+                        <TableColumn fx:id="outgoingTrafficProtocol" text="Protocol" />
+                        <TableColumn fx:id="outgoingTrafficSize" prefWidth="35.0" text="Size" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="15.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="62.0" prefHeight="320.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="320.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label text="Flagged traffic">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="flaggedTrafficTable" prefHeight="300.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="flaggedTrafficNo" prefWidth="45.0" text="No." />
+                        <TableColumn fx:id="flaggedTrafficTime" prefWidth="115.0" text="Time" />
+                        <TableColumn fx:id="flaggedTrafficSource" prefWidth="200.0" text="Source" />
+                        <TableColumn fx:id="flaggedTrafficProtocol" prefWidth="100.0" text="Protocol" />
+                        <TableColumn fx:id="flaggedTrafficSize" prefWidth="100.0" text="Size" />
+                        <TableColumn fx:id="flaggedTrafficDestination" prefWidth="200.0" text="Destination" />
+                        <TableColumn fx:id="flaggedTrafficNotes" prefWidth="200.0" text="Notes" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+</VBox>

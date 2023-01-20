@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox id="homeScreen" fx:id="homeScreen" styleClass="base" stylesheets="@../Stylesheets/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CyberScope.HomeScreenController">
+   <children>
+      <HBox alignment="CENTER_LEFT">
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+         <children>
+            <Label fx:id="tableLabel">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="ipLabel" alignment="CENTER_RIGHT">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <TableView fx:id="mainTable" editable="true" prefHeight="240.0" stylesheets="@../Stylesheets/style.css">
+        <columns>
+          <TableColumn fx:id="mainTableNo" minWidth="45.0" prefWidth="45.0" text="No." />
+          <TableColumn fx:id="mainTableTime" minWidth="115.0" prefWidth="115.0" text="Time" />
+            <TableColumn fx:id="mainTableSource" minWidth="200.0" prefWidth="200.0" text="Source" />
+            <TableColumn fx:id="mainTableProtocol" minWidth="80.0" text="Protocol" />
+            <TableColumn fx:id="mainTableSize" minWidth="70.0" prefWidth="70.0" text="Size (Bytes)" />
+            <TableColumn fx:id="mainTableDestination" minWidth="200.0" prefWidth="200.0" text="Destination" />
+            <TableColumn fx:id="mainTableFlagged" minWidth="80.0" text="Is flagged?" />
+            <TableColumn fx:id="mainTableNotes" minWidth="180.0" prefWidth="180.0" text="Notes" />
+        </columns>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Label text="Packet breakdown">
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <HBox>
+         <children>
+            <TreeView fx:id="packetFocus" prefHeight="200.0" prefWidth="400.0" stylesheets="@../Stylesheets/style.css" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TreeView>
+            <TreeView fx:id="packetFocusHexDump" prefHeight="200.0" prefWidth="400.0" stylesheets="@../Stylesheets/style.css" HBox.hgrow="ALWAYS" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Label text="Apply filters">
+         <VBox.margin>
+            <Insets bottom="5.0" />
+         </VBox.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <HBox spacing="3.0" stylesheets="@../Stylesheets/style.css">
+         <children>
+            <Button id="plusIcon" fx:id="addFilterButton" mnemonicParsing="false">
+               <graphic>
+                  <ImageView id="plusIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/plus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button id="minusIcon" fx:id="removeFilterButton" mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/minus.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+         <VBox.margin>
+            <Insets bottom="3.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox prefHeight="100.0" VBox.vgrow="ALWAYS">
+         <children>
+            <TableView fx:id="filterTableView" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="filterTypeColumn" maxWidth="250.0" minWidth="200.0" prefWidth="200.0" text="Type" />
+                <TableColumn fx:id="filterFromColumn" maxWidth="300.0" minWidth="250.0" prefWidth="250.0" text="From/Value" />
+                  <TableColumn fx:id="filterToColumn" maxWidth="300.0" minWidth="250.0" prefWidth="250.0" text="To" />
+                  <TableColumn fx:id="filterNegatedColumn" maxWidth="125.0" minWidth="100.0" prefWidth="100.0" text="Negated?" />
+              </columns>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </TableView>
+         </children>
+         <VBox.margin>
+            <Insets bottom="10.0" />
+         </VBox.margin>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+   </padding>
+</VBox>
