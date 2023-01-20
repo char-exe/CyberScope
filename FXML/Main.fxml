@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../Stylesheets/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CyberScope.MainController">
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <left>
+      <VBox fx:id="sideBar" minHeight="-Infinity" minWidth="-Infinity" prefHeight="743.0" prefWidth="200.0" styleClass="sideBar" stylesheets="@../Stylesheets/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="homeScreenButton" graphicTextGap="10.0" maxHeight="50.0" maxWidth="200.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#homeScreen" text="Home" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/homeIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Separator prefWidth="200.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding></Separator>
+            <Button fx:id="mapScreenButton" graphicTextGap="10.0" maxHeight="50.0" maxWidth="200.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#mapScreen" text="Map" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/mapIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator layoutX="10.0" layoutY="60.0" prefWidth="200.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding></Separator>
+            <Button fx:id="metricScreenButton" graphicTextGap="10.0" layoutX="10.0" layoutY="83.0" maxHeight="50.0" maxWidth="200.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#metricScreen" text="Metrics" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/metricsIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator layoutX="10.0" layoutY="113.0" prefWidth="200.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding></Separator>
+            <Button fx:id="LANScreenButton" graphicTextGap="10.0" layoutX="10.0" layoutY="136.0" maxHeight="50.0" maxWidth="200.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#LANScreen" text="LAN" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/LANIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator layoutX="25.0" layoutY="186.0" prefWidth="200.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding></Separator>
+            <Button fx:id="flaggedScreenButton" graphicTextGap="10.0" layoutX="10.0" layoutY="189.0" maxHeight="50.0" maxWidth="200.0" minHeight="50.0" minWidth="100.0" mnemonicParsing="false" onAction="#flaggedScreen" text="Flagged" textAlignment="CENTER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Icons/flaggedIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Separator layoutX="25.0" layoutY="239.0" prefWidth="200.0">
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding></Separator>
+         </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+      </VBox>
+   </left>
+   <top>
+      <HBox id="topBar" stylesheets="@../Stylesheets/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="200.0" styleClass="sideBar" stylesheets="@../Stylesheets/style.css" />
+            <Region prefHeight="25.0" styleClass="topBar" stylesheets="@../Stylesheets/style.css" HBox.hgrow="ALWAYS" />
+            <HBox alignment="CENTER" styleClass="topBar" stylesheets="@../Stylesheets/style.css">
+               <children>
+                  <Button fx:id="playButton" mnemonicParsing="false" onAction="#startLiveUpdates" styleClass="liveButton" stylesheets="@../Stylesheets/style.css">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/play.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="pauseButton" mnemonicParsing="false" onAction="#stopLiveUpdates" styleClass="liveButton" stylesheets="@../Stylesheets/style.css">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Icons/pause.png" />
+                           </image>
+                           <viewport>
+                              <Rectangle2D height="64.0" width="64.0" />
+                           </viewport>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label id="statusLabel" fx:id="statusLabel" alignment="CENTER" prefWidth="100.0" stylesheets="@../Stylesheets/style.css" text="Capturing">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="2.0" left="5.0" right="5.0" top="2.0" />
+                           </padding></Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="15.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+            </HBox>
+            <Region layoutX="210.0" layoutY="10.0" prefHeight="25.0" styleClass="topBar" stylesheets="@../Stylesheets/style.css" HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

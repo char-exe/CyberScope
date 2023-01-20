@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="mapScreen" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CyberScope.Maps.MapScreenController">
+   <children>
+      <Label text="Traffic map">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="15.0" top="5.0" />
+         </VBox.margin></Label>
+      <VBox fx:id="loadingBox" alignment="TOP_CENTER" prefHeight="150.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+         <children>
+            <Label text="Resolving GeoIP data...">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0">
+               <children>
+                  <ProgressBar fx:id="progressBar" prefHeight="27.0" prefWidth="200.0" progress="0.0" />
+               </children>
+            </HBox>
+            <Label fx:id="loadingLabel" text="Loading..." />
+            <Label fx:id="timeElapsedLabel" layoutX="285.0" layoutY="87.0" text="Time elapsed: " />
+         </children>
+      </VBox>
+      <StackPane fx:id="viewPane" VBox.vgrow="ALWAYS" />
+   </children>
+</VBox>
